@@ -1,0 +1,20 @@
+def ispalindrome(r):
+    for i in range(int(len(r)/2)):
+        if r[i]!=r[len(r)-i-1]:
+            return False
+    return True
+    
+s=input()
+res=''
+m=0
+for i in range(len(s)-1):
+    
+    for j in range(i+1,len(s)):
+        r=''
+        r=r+s[i:j+1]
+        if(ispalindrome(r)):
+            if(m<len(r)):
+                res=''
+                res=res+r+' '+str(len(r))
+                m=len(r)
+print(res)
